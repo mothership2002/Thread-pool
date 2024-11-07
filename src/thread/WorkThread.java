@@ -1,4 +1,4 @@
-package Thread;
+package thread;
 
 public class WorkThread extends Thread {
 
@@ -22,9 +22,9 @@ public class WorkThread extends Thread {
         }
     }
 
-    public void setTask(WorkTask task) {
+    public synchronized void setTask(WorkTask task) {
         this.task = task;
-        notifyAll();
+        notify();
     }
 
     public WorkTask getTask() {

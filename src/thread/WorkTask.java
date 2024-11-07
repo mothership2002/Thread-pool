@@ -1,19 +1,17 @@
-package Thread;
+package thread;
 
-import Utils.Util;
+import utils.Util;
 
 public class WorkTask implements ThreadScript {
 
     @Override
     public void run() {
-        System.out.println(Util.getPrefix("TASK"));
-
+        System.out.println(Util.getPrefix("TASK", "Start"));
         try {
-            Thread.sleep(5000);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        System.out.println();
+        System.out.println(Util.getPrefix("TASK", "End"));
     }
 }

@@ -1,7 +1,7 @@
-package Thread;
+package thread;
 
-import Queue.TaskQueue;
-import Utils.Util;
+import queue.TaskQueue;
+import utils.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,15 +23,14 @@ public class ManageTask implements ThreadScript {
 
     @Override
     public void run() {
-        System.out.println(Util.getPrefix("MANAGE"));
+        System.out.println(Util.getPrefix("MANAGE", "Start"));
         while (true) {
             if (taskQueue.isHaveElement()) {
-                WorkTask task = taskQueue.getTask();
                 WorkThread freeWorkerThread = getFreeWorkerThread();
                 if (freeWorkerThread == null) {
-                    while (!taskQueue.isSuccessToAdd(task));
                     continue;
                 }
+                WorkTask task = taskQueue.getTask();
                 freeWorkerThread.setTask(task);
             }
         }
