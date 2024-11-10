@@ -1,4 +1,4 @@
-package thread;
+package v1.thread;
 
 public class WorkThread extends Thread {
 

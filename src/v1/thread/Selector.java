@@ -1,6 +1,6 @@
-package thread;
+package v1.thread;
 
-import queue.TaskQueue;
+import v1.queue.TaskQueue;
 
 public class Selector {
 
